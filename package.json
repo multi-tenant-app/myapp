@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "react": "^16.4.1",
-    "react-native": "0.55",
+    "react-native": "^0.56.0",
     "the_core": "git+https://github.com/multi-tenant-app/core.git"
   },
   "devDependencies": {
     "babel-jest": "23.2.0",
-    "babel-preset-react-native": "4.0.0",
+    "babel-preset-react-native": "^5.0.1",
     "jest": "^23.3.0",
     "react-test-renderer": "^16.4.1"
   },
