@@ -1,22 +1,20 @@
 import React from 'react';
+import { PersistGate } from 'redux-persist/es/integration/react';
 
 import MainTabNavigator from 'the_core/navigator/MainTabNavigator';
-import { compose, createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import reducers from 'the_core/redux/reducers';
+import configureStore from 'the_core/redux/store/configureStore';
 
-const store = createStore(reducers,
-  undefined,
-  compose(
-    applyMiddleware(thunk)
-  )
-);
+const App = () => {
+  const { persistor, store } = configureStore();
 
-const App = () => (
-  <Provider store={store} >
-    <MainTabNavigator />
-  </Provider>
-);
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <MainTabNavigator />
+      </PersistGate>
+    </Provider>
+  );
+};
 
 export default App;
