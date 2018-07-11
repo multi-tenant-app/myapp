@@ -13,18 +13,20 @@ import { DEBUGS } from 'the_core/config/constants';
 // Redux
 import configureStore from 'the_core/redux/store/configureStore';
 
-const App = () => {
-  if (DEBUGS.EXPERIMENTALS) return <ExpComponents />;
+export default class App extends React.PureComponent {
+  componentDidMount() {}
 
-  const { persistor, store } = configureStore();
+  render() {
+    if (DEBUGS.EXPERIMENTALS) return <ExpComponents />;
 
-  return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <MainTabNavigator />
-      </PersistGate>
-    </Provider>
-  );
-};
+    const { persistor, store } = configureStore();
 
-export default App;
+    return (
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <MainTabNavigator />
+        </PersistGate>
+      </Provider>
+    );
+  }
+}
