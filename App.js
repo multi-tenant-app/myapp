@@ -2,10 +2,10 @@ import React from 'react';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { Provider } from 'react-redux';
 
-import MainTabNavigator from 'yas-core/demo/navigator/MainTabNavigator';
+import RootNavigator from 'yas-core/navigators/RootNavigator';
 
 // Redux
-import configureStore from 'yas-core/demo/redux/store/configureStore';
+import { configureStore } from 'yas-core/redux/store';
 
 export default class App extends React.PureComponent {
   componentDidMount() {}
@@ -16,7 +16,7 @@ export default class App extends React.PureComponent {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <MainTabNavigator />
+          <RootNavigator />
         </PersistGate>
       </Provider>
     );
