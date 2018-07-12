@@ -1,24 +1,16 @@
 import React from 'react';
 import { PersistGate } from 'redux-persist/es/integration/react';
-
-import MainTabNavigator from 'the_core/navigator/MainTabNavigator';
 import { Provider } from 'react-redux';
 
-// Components
-import ExpComponents from 'the_core/uicomponents/ExpComponents';
-
-// Constants
-import { DEBUGS } from 'the_core/config/constants';
+import MainTabNavigator from 'yas-core/demo/navigator/MainTabNavigator';
 
 // Redux
-import configureStore from 'the_core/redux/store/configureStore';
+import configureStore from 'yas-core/demo/redux/store/configureStore';
 
 export default class App extends React.PureComponent {
   componentDidMount() {}
 
   render() {
-    if (DEBUGS.EXPERIMENTALS) return <ExpComponents />;
-
     const { persistor, store } = configureStore();
 
     return (
