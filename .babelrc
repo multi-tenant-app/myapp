@@ -1,3 +1,14 @@
 {
-  "presets": ["react-native"]
+  "plugins": [
+    "lodash",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ],
+  "presets": [
+    "react-native"
+  ]
 }
